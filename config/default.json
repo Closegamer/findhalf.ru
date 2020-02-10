@@ -1,0 +1,7 @@
+{
+  "mongoURI": "mongodb://localhost:27017/FindHalfDB",
+  "jwtSecret": "***",
+  "jwtRefreshSecret": "***",
+  "mailUser": "admin@salesreactor.ru",
+  "mailPassword": "***"
+}

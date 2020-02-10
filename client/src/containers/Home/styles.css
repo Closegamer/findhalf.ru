@@ -1,0 +1,93 @@
+.playground-cont {
+  /* border: 1px solid green; */
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.bordered {
+  border: 1px solid red;
+}
+
+.timerFiguresCont {
+  width: 80%;
+  font-size: 25px;
+  color: black;
+}
+
+.timerLabel {
+  font-size: 10px;
+  align: "center";
+}
+
+.countdownHrs {
+  border: 1px solid grey;
+  margin-right: 10px;
+  padding: 5px;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  border-radius: 4px;
+}
+
+.countdownMin {
+  border: 1px solid grey;
+
+  margin-right: 10px;
+  padding: 5px;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  border-radius: 4px;
+}
+
+.countdownSec {
+  border: 1px solid grey;
+  padding: 5px;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  border-radius: 4px;
+}
+
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #00c851 !important;
+  left: 1.5rem;
+}
+.switchAutobetting {
+  color: black;
+  margin-top: 10px;
+}
+
+.cardGameHumanId {
+  color: black;
+}
+
+.cardCurrentPrice {
+  color: black;
+}
+
+.cardFontColor {
+  color: black;
+}
+
+.cardWinner {
+  color: black;
+  font-size: 16px;
+}
+
+.cardDiscount {
+  color: green;
+  font-size: 30px;
+}
+
+.card-img-top {
+  max-height: 160px;
+  width: auto;
+}
+
+.card-wrapper .card-up img {
+  vertical-align: middle;
+  margin-top: 20px;
+}
+
+.cardOr {
+  font-size: 12px;
+}

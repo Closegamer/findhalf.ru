@@ -1,0 +1,41 @@
+{
+  "name": "devconnector",
+  "version": "1.0.0",
+  "description": "Social network for developers",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --experimental-worker server",
+    "server": "nodemon server",
+    "client": "yarn --cwd ./client start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "test": "mocha --timeout 10000"
+  },
+  "author": "1",
+  "license": "MIT",
+  "dependencies": {
+    "async-await-foreach": "^1.0.4",
+    "await-foreach": "^0.0.2",
+    "bcryptjs": "^2.4.3",
+    "child_process": "^1.0.2",
+    "config": "^3.1.0",
+    "cron": "^1.7.1",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.1.5",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.1",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.2.1",
+    "os": "^0.1.1",
+    "request": "^2.88.0",
+    "socket.io": "^2.2.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "concurrently": "^4.1.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.18.11"
+  }
+}
