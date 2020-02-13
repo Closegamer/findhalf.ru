@@ -35,7 +35,7 @@ router.post(
         .json({ success: false, error: errors.array().join(", ") });
     }
 
-    const { nick, email, password, role } = req.body;
+    const { nick, email, password } = req.body;
 
     try {
       let user = await User.findOne({ email });
@@ -52,108 +52,6 @@ router.post(
           success: false,
           error: "Пользователь с таким ником уже зарегистрирован!"
         });
-      }
-
-      const crew = [
-        "Dyatlov",
-        "Andrew87",
-        "MaminSibiryak",
-        "Helen99",
-        "ElenaGolubeva",
-        "semen_protas",
-        "Ark",
-        "Sveta",
-        "Princess2019",
-        "Zara1",
-        "Sanek_Arm",
-        "iPhonka_kiss",
-        "ManInBlack",
-        "Zudin_Yura",
-        "Shmelev_Dima",
-        "fil99",
-        "Player_Good",
-        "Black",
-        "samoylova_vikk",
-        "Alina89",
-        "Karine",
-        "Intruder",
-        "Denis",
-        "Artemka",
-        "Artem",
-        "prezident",
-        "Sasha___",
-        "KingsOfLeon",
-        "Mara7",
-        "jamesbond",
-        "skyuoker",
-        "pitonka",
-        "IraHovrino",
-        "Zubanova",
-        "oldBoy",
-        "Kolya",
-        "Big_bang",
-        "PoetMichael",
-        "Misha",
-        "manman",
-        "77Москвич",
-        "Арбузик",
-        "Шпана19",
-        "ДядяФедор",
-        "Шопен",
-        "Костян",
-        "Земфира1994",
-        "Атос",
-        "Принц",
-        "Пупырка",
-        "Стасик",
-        "Россиянин",
-        "Шоколадка",
-        "Стас_1976",
-        "Витя",
-        "Вика",
-        "Нат78",
-        "Бумер",
-        "Школьница",
-        "Спанчбоб",
-        "Макарова_А",
-        "Мурманск",
-        "9_жизней",
-        "Мадонна",
-        "Бушик",
-        "Кошка_мышка",
-        "Наташа",
-        "Леня",
-        "Аркадий2000",
-        "Большой_Брат",
-        "Захаров",
-        "Паша",
-        "Паша19",
-        "РомКола",
-        "Санек",
-        "Петр_Калачев",
-        "Доктор",
-        "Дима",
-        "Оренбург2020",
-        "Погодина_Валя",
-        "БоковановКирилл",
-        "Крошка_ру",
-        "Андерсен",
-        "Карлсончик",
-        "___Маша___",
-        "Юля_П",
-        "Капитан_земли",
-        "Исмат",
-        "Вера9999",
-        "Сега"
-      ];
-
-      for (var q = 0; q < crew.length; q++) {
-        if (crew[q] == nick) {
-          return res.status(400).json({
-            success: false,
-            error: "Пользователь с таким ником уже зарегистрирован!"
-          });
-        }
       }
 
       let role = "customer";
@@ -173,7 +71,6 @@ router.post(
 
       let discount = 0;
       let phone = "";
-      let address = "";
 
       function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;

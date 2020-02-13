@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as authActions from '../../ducks/auth';
-import injectSheet from 'react-jss';
-import LoginForm from './LoginForm';
-import RegisterForm from './RegisterForm';
-import RecoveryForm from './RecoveryForm';
-import signInImg from './../../img/signin.jpg';
-import './style.css';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as authActions from "../../ducks/auth";
+import injectSheet from "react-jss";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
+import RecoveryForm from "./RecoveryForm";
+import signInImg from "./../../img/signin.jpg";
+import "./style.css";
 
-import { MDBContainer, MDBModal } from 'mdbreact';
+import { MDBContainer, MDBModal } from "mdbreact";
 
 export class Login extends Component {
   static propTypes = {
@@ -22,7 +22,7 @@ export class Login extends Component {
   };
 
   state = {
-    form: 'login'
+    form: "login"
   };
 
   toggleFormType = form => this.setState({ form });
@@ -38,7 +38,7 @@ export class Login extends Component {
   onRegister = values => {
     return this.props.actions.registerUser(values).then(res => {
       if (res.success) {
-        this.setState({ form: 'login' }, () =>
+        this.setState({ form: "login" }, () =>
           this.props.actions.toggleLoginForm()
         );
       }
@@ -64,14 +64,14 @@ export class Login extends Component {
           //backdrop={false}
           //onClick={e => alert(1)}
         >
-          {form === 'login' && (
+          {form === "login" && (
             <LoginForm
               classes={classes}
               toggleFormType={this.toggleFormType}
               onSubmit={this.onLogin}
             />
           )}
-          {form === 'register' && (
+          {form === "register" && (
             <RegisterForm
               classes={classes}
               toggleFormType={this.toggleFormType}
@@ -79,7 +79,7 @@ export class Login extends Component {
               initialValues={{ agree: true }}
             />
           )}
-          {form === 'recovery' && (
+          {form === "recovery" && (
             <RecoveryForm
               classes={classes}
               toggleFormType={this.toggleFormType}
@@ -100,41 +100,7 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({ ...authActions }, dispatch)
 });
 
-const styles = {
-  modalContent: {
-    padding: 0,
-    backgroundColor: 'transparent'
-  },
-
-  overlay: {
-    opacity: 0.5,
-    transition: 'opacity .15s linear',
-    backgroundColor: '#000',
-    position: 'fixed',
-    zIndex: 1040,
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0
-  },
-
-  form: {},
-
-  card: {
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    width: '100%',
-    backgroundImage: `url(${signInImg})`
-  },
-
-  link: {
-    cursor: 'pointer'
-  },
-
-  customIcon: {
-    color: 'red'
-  }
-};
+const styles = {};
 
 export default connect(
   mapStateToProps,
