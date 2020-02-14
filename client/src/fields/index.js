@@ -4,6 +4,7 @@ import CheckBoxField from "./CheckBoxField";
 import SelectField from "./SelectField";
 import FileField from "./FileField";
 import TextArea from "./TextArea";
+import DateField from "./DateField";
 
 export {
   TextField,
@@ -11,5 +12,6 @@ export {
   CheckBoxField,
   SelectField,
   FileField,
-  TextArea
+  TextArea,
+  DateField
 };

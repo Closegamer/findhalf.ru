@@ -71,6 +71,12 @@ router.post(
 
       let discount = 0;
       let phone = "";
+      let address = "";
+      let zodiacDaySign = "";
+      let zodiacNightSign = "";
+      let yearSign = "";
+      let city = "";
+      let dob = null;
 
       function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -87,8 +93,12 @@ router.post(
         stuff,
         discount,
         phone,
-        address,
-        balance
+        balance,
+        zodiacDaySign,
+        zodiacNightSign,
+        yearSign,
+        city,
+        dob
       });
 
       const salt = await bcrypt.genSalt(10);
@@ -97,6 +107,10 @@ router.post(
 
       if (!user.contribution) {
         user.contribution = 0;
+      }
+
+      if (!user.dob) {
+        user.dob = null;
       }
 
       await user.save();

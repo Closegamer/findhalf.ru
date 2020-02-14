@@ -16,6 +16,7 @@ let RegisterForm = props => {
     error,
     submitting
   } = props;
+
   return (
     <form onSubmit={handleSubmit}>
       <MDBCard>

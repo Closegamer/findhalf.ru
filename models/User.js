@@ -45,19 +45,19 @@ const UserSchema = new mongoose.Schema({
   },
   zodiacDaySign: {
     type: String,
-    required: true
+    required: false
   },
   zodiacNightSign: {
     type: String,
-    required: true
+    required: false
   },
   yearSign: {
     type: String,
-    required: true
+    required: false
   },
   city: {
     type: String,
-    required: true
+    required: false
   },
   dob: {
     type: Date,
